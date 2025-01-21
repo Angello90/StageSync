@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nodelist.css') }}">
+  <title>Nœuds</title>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>IP</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for id, data in nodes.items() %}
+        <tr>
+          <td>{{ id }}</td>
+          <td>{{ data.ip }}</td>
+          <td class="{{ 'status-on' if data.status == 'on' else 'status-off' }}">
+            {{ data.status }}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

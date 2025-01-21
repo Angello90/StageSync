@@ -1,33 +1,9 @@
 # Flask API Project
 
-## Description
+## Description du projet
 
-Ce projet est une API REST construite avec Flask. Elle est organisée de manière modulaire pour être facilement extensible et maintenable. Elle expose plusieurs endpoints pour gérer des utilisateurs, des produits, et d'autres entités.
+Ce projet consiste en la création d'un timer partagé synchronisé en réseau dans le but est l'utilisation en festival (SOLECTRO). Le projet s'articule en plusieurs parties. Ce repo Github est le code et le fonctionnement du server principal qui emet le timer. Il aura pour fonctionalté: 
 
----
-
-## Structure du Projet
-
-```
-my_flask_api/
-├── app/
-│   ├── __init__.py         # Initialisation de l'application Flask
-│   ├── routes/             # Dossier contenant les routes
-│   │   ├── __init__.py     # Enregistrement des routes
-│   │   ├── user_routes.py  # Routes pour les utilisateurs
-│   │   ├── product_routes.py # Routes pour les produits
-│   │   ├── data_routes.py  # Route pour renvoyer un tableau JSON
-│   ├── models/             # Modèles pour SQLAlchemy
-│   │   ├── __init__.py     
-│   │   ├── user_model.py   
-│   ├── config.py           # Configuration de l'application
-│   ├── extensions.py       # Extensions Flask
-├── migrations/             # Migrations pour la base de données
-├── tests/                  # Tests unitaires
-├── run.py                  # Point d'entrée de l'application
-├── requirements.txt        # Liste des dépendances
-└── README.md               # Documentation du projet
-```
 
 ---
 
