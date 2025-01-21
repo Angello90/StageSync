@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from .routes import registration_routes
 
 def create_app():
@@ -10,6 +10,6 @@ def create_app():
     
     @app.errorhandler(404)
     def error_404(error):
-        return {"message": "Resource not found"}, 404
+        return render_template("404.html"), 404
 
     return app
