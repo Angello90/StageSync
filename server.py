@@ -1,7 +1,6 @@
 from src import create_app
+from src.config import PORT
 import os
-
-PORT = os.getenv("PORT", 5000)
 
 app = create_app()
 

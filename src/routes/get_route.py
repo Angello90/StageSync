@@ -15,7 +15,8 @@ def timer_route():
     if node_id:
         for node in nodes:
             if str(node) == str(node_id):
-                return jsonify({"time": f"{get_elapsed_time()}"}), 200
+                if nodes[node]['status'] == "on" and nodes[node]['ip'] == request.remote_addr:
+                    return jsonify({"time": f"{get_elapsed_time()}"}), 200
 
-        
-        return jsonify({"message": f"Node {node_id} not found"}), 404
+        return jsonify({"message": "Node is not plugged"}), 400
+    

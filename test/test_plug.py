@@ -5,7 +5,7 @@ data = {
     "id": 1,
 }
 
-for i in range(1, 20):
+for i in range(1, 50):
     data["id"] = i
     response = requests.post(url, json=data)
 
