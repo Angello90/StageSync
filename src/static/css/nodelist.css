@@ -33,6 +33,8 @@ td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
+    color: #fff;
+    font-weight: 700;
 }
 
 th {
@@ -40,14 +42,22 @@ th {
     color: #fff;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
     background-color: #f2f2f2;
-}
+} */
 
-.status-on {
+/* .status-on {
     color: green;
 }
 
 .status-off {
     color: red;
+} */
+
+.status-on {
+    background-color: rgba(14, 128, 14, 0.5);
+}
+
+.status-off {
+    background-color: rgba(255, 14, 14, 0.5);
 }

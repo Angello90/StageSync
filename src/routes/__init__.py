@@ -7,3 +7,4 @@ def registration_routes(app):
     app.register_blueprint(get_bp, url_prefix="/api")
     app.register_blueprint(node_bp, url_prefix="/api")
     app.register_blueprint(home_bp)
+    

@@ -13,17 +13,15 @@
         <tr>
           <th>ID</th>
           <th>IP</th>
-          <th>Status</th>
+          <th>LOCALISATION</th>
         </tr>
       </thead>
       <tbody>
         {% for id, data in nodes.items() %}
-        <tr>
+        <tr class="{{ 'status-on' if data.status == 'on' else 'status-off' }}">
           <td>{{ id }}</td>
           <td>{{ data.ip }}</td>
-          <td class="{{ 'status-on' if data.status == 'on' else 'status-off' }}">
-            {{ data.status }}
-          </td>
+          <td>Régisseur</td>
         </tr>
         {% endfor %}
       </tbody>

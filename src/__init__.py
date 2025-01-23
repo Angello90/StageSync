@@ -1,8 +1,10 @@
 from flask import Flask, render_template
 from .routes import registration_routes
 
+
 def create_app():
     app = Flask("Api_server_web")
+    
     app = Flask(__name__, static_folder='static')
     app.config["DEBUG"] = True
 
