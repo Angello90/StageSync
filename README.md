@@ -2,5 +2,5 @@
 
 ## Description du projet
 
-Ce projet consiste en la création d'un timer partagé synchronisé en réseau dans le but est l'utilisation en festival (SOLECTRO). Le projet s'articule en plusieurs parties. Ce repo Github est le code et le fonctionnement du server principal qui emet le timer. Il aura pour fonctionalté: 
+Ce projet consiste en la création d’un timer partagé, synchronisé en réseau, destiné à une utilisation en festival (SOLECTRO). Il s’articule autour de plusieurs parties. Ce dépôt GitHub contient le code et décrit le fonctionnement du serveur principal, qui est responsable de l’émission du timer. Ses principales fonctionnalités incluront :
 
