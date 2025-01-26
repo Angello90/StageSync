@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nodelist.css') }}">
+    <link rel="stylesheet" href="">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container_home">
+        <div class="grid">
+            <div><a href="/api/list">
+                <p>Liste des noeuds</p>
+            </a></div>
+            <div><a href="/api/planning">
+                <p>Planning</p>
+            </a></div>
+            <div><a href="/api/docs">
+                <p>Documentation</p>
+            </a></div>
+        </div>
+    </div>
+</body>
+</html>

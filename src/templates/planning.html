@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nodelist.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/logo.png')}}" type="image/x-icon">
+    <style>
+        td {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Planning</h1>
+
+    <div class="container">
+        <div class="add_group">
+            <h2>Ajouter un nouveau groupe</h2>
+            <form id="form">
+                <label for="nom">Nom du Groupe:</label>
+                <input type="text" id="nom" name="nom" required autocomplete="off">
+                <label for="duree">Durée (secondes):</label>
+                <input type="number" id="duree" name="duree" required>
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom du Groupe</th>
+                    <th>Durée (secondes)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in planning %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.nom }}</td>
+                    <td>{{ item.duree }}</td>
+                    <td data-id="{{ item.id }}"><button id="btn_modif" name="btn_modif">Modifier</button><button id="btn_suprim" name="btn_suprim">Supprimer</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <script src="{{url_for('static', filename="js/planning.js")}}"></script>
+    </div>
+</body>
+
+</html>

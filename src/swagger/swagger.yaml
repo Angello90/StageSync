@@ -1,0 +1,84 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "StageSync API"
+  description: "API pour gérer les nœuds et les timers"
+host: "localhost:5000"
+basePath: "/api"
+schemes:
+  - "http"
+
+paths:
+  /list:
+    get:
+      summary: "Lister les nœuds"
+      description: "Cette route permet de récupérer la liste des nœuds connecter."
+      responses:
+        200:
+          description: "Succès"
+          schema:
+            type: "array"
+            items:
+              type: "object"
+              properties:
+                id:
+                  type: "string"
+                  description: "L'identifiant du nœud"
+                ip:
+                  type: "string"
+                  description: "IP du noeud"
+                status:
+                  type: "string"
+                  description: "Statut du noeud"
+        500:
+          description: "Erreur interne du serveur"
+
+  /plug:
+    post:
+      summary: "Ajouter un nœud"
+      description: "Cette route permet d'ajouter un nœud en fournissant un ID."
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          description: "Le contenu de la requête contenant l'identifiant du nœud"
+          schema:
+            type: "object"
+            required:
+              - id
+            properties:
+              id:
+                type: "string"
+                description: "L'identifiant du nœud"
+      responses:
+        201:
+          description: "Nœud ajouté avec succès"
+        400:
+          description: "Requête invalide, paramètre manquant ou incorrect"
+
+  /get:
+    get:
+      summary: "Récupérer le timer"
+      description: "Cette route permet de récupérer le timer"
+      parameters:
+        - in: "query"
+          name: "id"
+          required: true
+          type: "string"
+          description: "L'identifiant du nœud"
+      responses:
+        200:
+          description: "Succès"
+          schema:
+            type: "object"
+            properties:
+              hours:
+                type: "string"
+              minutes:
+                type: "string"
+              seconds:
+                type: "string"
+        400:
+          description: "Requête invalide, paramètre manquant ou incorrect"
+        404:
+          description: "Nœud introuvable"

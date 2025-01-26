@@ -4,8 +4,7 @@ from socketio import AsyncServer
 from ..config import nodes
 from flask_cors import CORS
 
-node_bp = Blueprint("node_bp", __name__, template_folder="../templates")
-
+node_bp = Blueprint("node_bp", __name__, template_folder="../templates", static_folder="../static")
 
 CORS(node_bp)
 
@@ -15,7 +14,11 @@ def plug_route():
     data = request.json
     id = data.get('id')
     ip = request.remote_addr
-    if id:
+    
+    if id and ip:
+        print(nodes)
+        if id in nodes or str(ip) in [node['ip'] for node in nodes.values()]:
+            return jsonify({"message": "Node with this id or ip is already plugged"}), 200
         nodes[id] = {'ip': ip, "status": "on"}
         return jsonify({"message": f"Node {id} is plugged"}), 201
     return jsonify({"message": "Node id is required"}), 400
