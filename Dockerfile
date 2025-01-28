@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r Requirements.txt
 
-EXPOSE 80
+EXPOSE 5000
 
-ENV NAME World
+# ENV NAME StageSync
 
-CMD ["python", "app.py"]
+CMD ["python", "-m", "flask", "--app", "server", "run"]
