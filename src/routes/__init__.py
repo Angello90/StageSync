@@ -13,7 +13,7 @@ def registration_routes(app: Flask):
     app.register_blueprint(node_bp, url_prefix="/api")
     app.register_blueprint(home_bp)
     app.register_blueprint(planning_bp, url_prefix="/api")
-
+    
     SWAGGER_URL = '/api/docs'
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     API_SPEC_PATH = os.path.join(BASE_DIR, '../swagger/swagger.yaml')
