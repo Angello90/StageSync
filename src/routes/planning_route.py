@@ -15,14 +15,6 @@ def planning_route():
     return render_template("planning.html", planning=planning)
 
 
-@planning_bp.route("/planning/<int:id>", methods=["GET"]) # A supprimer
-def planning_id_route(id):
-    for group in planning:
-        if group["id"] == id:
-            return jsonify(group), 200
-    return jsonify({"message": "Planning id not found"}), 404
-
-
 @planning_bp.route("/planning/new", methods=["POST"])
 def planning_post_route():
     data = request.json
